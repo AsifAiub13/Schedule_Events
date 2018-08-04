@@ -2,11 +2,11 @@
 //  SettingsTableViewController.h
 //  SimpleEKDemo
 //
-//  Created by Asif Seraje on 7/31/18.
+//  Created by Asif on 7/31/18.
 //
 
 #import <UIKit/UIKit.h>
-
+#import "AboutTableViewController.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SettingsTableViewController : UITableViewController

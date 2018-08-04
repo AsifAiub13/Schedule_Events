@@ -2,12 +2,12 @@
 //  RootViewController.m
 //  SimpleEKDemo
 //
-//  Created by Asif Seraje on 7/31/18.
+//  Created by Asif on 7/31/18.
 //
 
 #import "RootViewController.h"
-
-@interface RootViewController () <EKEventEditViewDelegate>
+#import <MessageUI/MessageUI.h>
+@interface RootViewController () <EKEventEditViewDelegate,MFMessageComposeViewControllerDelegate,MFMailComposeViewControllerDelegate>
 // EKEventStore instance associated with the current Calendar application
 @property (nonatomic, strong) EKEventStore *eventStore;
 
@@ -19,8 +19,11 @@
 
 // Used to add events to Calendar
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *addButton;
+@property UIColor *themeColor;
+@property NSString *eventTitleLabelText;
+@property bool isSmsEvent;
+@property bool isMailEvent;
 @end
-
 
 @implementation RootViewController
 
@@ -36,6 +39,8 @@
 	self.eventsList = [[NSMutableArray alloc] initWithCapacity:0];
     // The Add button is initially disabled
     self.addButton.enabled = NO;
+    //_themeColor = [UIColor colorWithRed:35/255.0 green:113/255.0 blue:186/255.0 alpha:1];
+    //self.tableView.backgroundColor = _themeColor;
 }
 
 
@@ -69,6 +74,13 @@
 #pragma mark -
 #pragma mark Table View
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    return @"Upcoming Events";
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 	return self.eventsList.count;
@@ -78,12 +90,47 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"eventCell" forIndexPath:indexPath];
-    
-    // Get the event at the row selected and display its title
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"eventCell"];
+    }
+    cell.textLabel.font = [UIFont fontWithDescriptor:[cell.textLabel.font.fontDescriptor fontDescriptorWithSymbolicTraits:UIFontDescriptorTraitBold] size:cell.textLabel.font.pointSize];
     cell.textLabel.text = [(self.eventsList)[indexPath.row] title];
+    if ([[(self.eventsList)[indexPath.row] title] containsString:@"SMS"] || [[(self.eventsList)[indexPath.row] title] containsString:@"Sms"] || [[(self.eventsList)[indexPath.row] title] containsString:@"Mail"] || [[(self.eventsList)[indexPath.row] title] containsString:@"Email"] || [[(self.eventsList)[indexPath.row] title] containsString:@"mail"] || [[(self.eventsList)[indexPath.row] title] containsString:@"email"]) {
+        cell.detailTextLabel.text = [NSString stringWithFormat: @"Last Modified: %@", [(self.eventsList)[indexPath.row] lastModifiedDate]];
+        cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+    }else{
+        cell.detailTextLabel.text = @"";
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
+    
+    if ([[(self.eventsList)[indexPath.row] title] containsString:@"SMS"] || [[(self.eventsList)[indexPath.row] title] containsString:@"Sms"]){
+        _isSmsEvent = true;
+        _isMailEvent = false;
+    }else if([[(self.eventsList)[indexPath.row] title] containsString:@"Email"] || [[(self.eventsList)[indexPath.row] title] containsString:@"email"] || [[(self.eventsList)[indexPath.row] title] containsString:@"mail"] || [[(self.eventsList)[indexPath.row] title] containsString:@"Mail"]) {
+        _isSmsEvent = false;
+        _isMailEvent = true;
+    }else{
+        _isSmsEvent = false;
+        _isMailEvent = false;
+    }
+    // Get the event at the row selected and display its title
+    
+    //cell.textLabel.textColor = [UIColor whiteColor];
+    //cell.backgroundColor = [UIColor clearColor];
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
+    
+    if (_isSmsEvent == true && _isMailEvent == false){
+        [self showSmsViewController];
+        
+    }else if(_isMailEvent == true && _isSmsEvent == false) {
+        [self showMailViewController];
+    }else{
+        NSLog(@"Should not come here");
+    }
+}
 
 #pragma mark -
 #pragma mark Access Calendar
@@ -223,6 +270,30 @@
      }];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    _eventTitleLabelText = [(self.eventsList)[indexPath.row] title];
+    NSLog(@"Event Title is: %@",_eventTitleLabelText);
+}
+
+-(void) showSmsViewController{
+    if(![MFMessageComposeViewController canSendText]) {
+        UIAlertView *warningAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Your device doesn't support SMS!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [warningAlert show];
+        return;
+    }
+    
+    //NSArray *recipents = @[@"12345678", @"72345524"];
+    NSString *message = @"Just sent the file to your email. Please check!";
+    
+    MFMessageComposeViewController *messageController = [[MFMessageComposeViewController alloc] init];
+    messageController.messageComposeDelegate = self;
+    //[messageController setRecipients:recipents];
+    [messageController setBody:message];
+    
+    // Present message view controller on screen
+    [self presentViewController:messageController animated:YES completion:nil];
+}
+
 
 // Set the calendar edited by EKEventEditViewController to our chosen calendar - the default calendar.
 - (EKCalendar *)eventEditViewControllerDefaultCalendarForNewEvents:(EKEventEditViewController *)controller
@@ -230,4 +301,70 @@
 	return self.defaultCalendar;
 }
 
+- (BOOL)tableView:(UITableView *)tableView shouldShowMenuForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return true;
+}
+
+
+#pragma mark - MessageDelegates
+- (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult) result
+{
+    switch (result) {
+        case MessageComposeResultCancelled:
+            break;
+            
+        case MessageComposeResultFailed:
+        {
+            UIAlertView *warningAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Failed to send SMS!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [warningAlert show];
+            break;
+        }
+            
+        case MessageComposeResultSent:
+            break;
+            
+        default:
+            break;
+    }
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    _isSmsEvent = false;
+}
+
+-(void) showMailViewController{
+    if ([MFMailComposeViewController canSendMail]) {
+        MFMailComposeViewController *mail =
+        [[MFMailComposeViewController alloc] init];
+        mail.mailComposeDelegate = self;
+        [mail setSubject:@"Sample Subject"];
+        //[mail setMessageBody:@"Sample body message"];
+        [mail setToRecipients:@[@"testingEmail@example.com"]];
+        //[mailVC  addAttachmentData: dataForImage mimeType: @”image/jpeg”; fileName: @”My image”];
+        [self presentViewController:mail animated:YES completion:NULL];
+    } else {
+        NSLog(@"This device cannot send email");
+    }
+}
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    switch (result) {
+        case MFMailComposeResultSent:
+            //Email sent
+            break;
+        case MFMailComposeResultSaved:
+            //Email saved
+            break;
+        case MFMailComposeResultCancelled:
+            //Handle cancelling of the email
+            break;
+        case MFMailComposeResultFailed:
+            //Handle failure to send.
+            break;
+        default:
+            //A failure occurred while completing the email
+            break;
+    }
+    [self dismissViewControllerAnimated:YES completion:NULL];
+    _isMailEvent = false;
+}
 @end

@@ -2,7 +2,7 @@
 //  SettingsTableViewController.m
 //  SimpleEKDemo
 //
-//  Created by Asif Seraje on 7/31/18.
+//  Created by Asif on 7/31/18.
 //
 
 #import "SettingsTableViewController.h"
@@ -45,7 +45,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.row == 0) {
-        NSLog(@"About Pressed");
+        AboutTableViewController *aboutView = [[AboutTableViewController alloc] init];
+        [self.navigationController pushViewController:aboutView animated:true];
     }
     [self.tableView deselectRowAtIndexPath:indexPath animated:true];
 }

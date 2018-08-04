@@ -2,8 +2,8 @@
 //  RootViewController.h
 //  SimpleEKDemo
 //
-//  Created by Asif Seraje on 7/31/18.
+//  Created by Asif on 7/31/18.
 //
 
-@interface RootViewController : UITableViewController 
+@interface RootViewController : UITableViewController
 @end

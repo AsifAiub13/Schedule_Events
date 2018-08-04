@@ -2,7 +2,7 @@
 //  SimpleEKDemoAppDelegate.m
 //  SimpleEKDemo
 //
-//  Created by Asif Seraje on 7/31/18.
+//  Created by Asif on 7/31/18.
 //
 
 
@@ -15,9 +15,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [[UITabBar appearance] setBarTintColor:[UIColor blackColor]];
-    [[UITabBar appearance] setTintColor:[UIColor yellowColor]];
-    [[UITabBar appearance] setBackgroundColor:[UIColor blackColor]];
+    [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:23/255.0 green:76/255.0 blue:128/255.0 alpha:1]];
+    [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UITabBar appearance] setBackgroundColor:[UIColor colorWithRed:35 green:113 blue:186 alpha:1]];
+    //[[UITabBar appearance] setUnselectedItemTintColor:[UIColor whiteColor]];
     // Override point for customization after application launch.
     return YES;
 }
