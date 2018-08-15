@@ -15,10 +15,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     aboutElementsArray = @[@"App Name:",@"Version:",@"Build Number:",@"In app purchase"];
-    aboutRightElementsArray = @[@"ScheduleiT",@"1.0",@"20180804",@""];
+    aboutRightElementsArray = @[@"Schedule iT",@"1.1.0",@"20180804",@""];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.title = @"About Us";
+    self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
+    self.tableView.backgroundColor = [UIColor colorWithRed:23/255.0 green:76/255.0 blue:128/255.0 alpha:1];
 }
 
 #pragma mark - Table view data source
@@ -28,7 +30,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 4;
+    return 3;
 }
 
 
@@ -36,12 +38,15 @@
     [self.tableView registerClass:[UITableViewCell self] forCellReuseIdentifier:@"aboutCell"];
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"aboutCell"];
     cell.textLabel.text = aboutElementsArray[indexPath.row];
+    cell.textLabel.textColor = [UIColor whiteColor];
     cell.detailTextLabel.text = aboutRightElementsArray[indexPath.row];
+    cell.detailTextLabel.textColor = [UIColor lightGrayColor];
     if(indexPath.row == 3){
         cell.selectionStyle = UITableViewCellSelectionStyleDefault;
     }else{
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
+    cell.backgroundColor = [UIColor clearColor];
     return cell;
 }
 

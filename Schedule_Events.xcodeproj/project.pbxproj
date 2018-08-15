@@ -12,6 +12,7 @@
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */; };
 		7E8EE7E41194B0D70073914C /* SimpleEKDemoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8EE7E21194B0D70073914C /* SimpleEKDemoAppDelegate.m */; };
+		8D026E0A2123F17A0067AE54 /* UserManualViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D026E092123F17A0067AE54 /* UserManualViewController.m */; };
 		8D1A8526211618F4002230AD /* AboutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D1A8525211618F4002230AD /* AboutTableViewController.m */; };
 		8DE3FBF12110D35400D72D11 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE3FBF02110D35400D72D11 /* SettingsTableViewController.m */; };
 		8DE3FBF42110D55400D72D11 /* InboxTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE3FBF32110D55400D72D11 /* InboxTableViewController.m */; };
@@ -30,6 +31,8 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7E8EE7E21194B0D70073914C /* SimpleEKDemoAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SimpleEKDemoAppDelegate.m; path = Classes/SimpleEKDemoAppDelegate.m; sourceTree = SOURCE_ROOT; };
 		7E8EE7E31194B0D70073914C /* SimpleEKDemoAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SimpleEKDemoAppDelegate.h; path = Classes/SimpleEKDemoAppDelegate.h; sourceTree = SOURCE_ROOT; };
+		8D026E082123F17A0067AE54 /* UserManualViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserManualViewController.h; sourceTree = "<group>"; };
+		8D026E092123F17A0067AE54 /* UserManualViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserManualViewController.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Schedule_Events-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Schedule_Events-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		8D1A8524211618F4002230AD /* AboutTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AboutTableViewController.h; sourceTree = "<group>"; };
 		8D1A8525211618F4002230AD /* AboutTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AboutTableViewController.m; sourceTree = "<group>"; };
@@ -63,6 +66,8 @@
 				8DE3FBF32110D55400D72D11 /* InboxTableViewController.m */,
 				8D1A8524211618F4002230AD /* AboutTableViewController.h */,
 				8D1A8525211618F4002230AD /* AboutTableViewController.m */,
+				8D026E082123F17A0067AE54 /* UserManualViewController.h */,
+				8D026E092123F17A0067AE54 /* UserManualViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -178,6 +183,7 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				8DE3FBF42110D55400D72D11 /* InboxTableViewController.m in Sources */,
 				28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */,
+				8D026E0A2123F17A0067AE54 /* UserManualViewController.m in Sources */,
 				7E8EE7E41194B0D70073914C /* SimpleEKDemoAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

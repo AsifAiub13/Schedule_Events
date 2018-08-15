@@ -116,7 +116,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="lpN-ut-0Aa" kind="relationship" relationship="viewControllers" id="vyj-5b-HnE"/>
-                        <segue destination="AKL-KU-xnW" kind="relationship" relationship="viewControllers" id="jG2-Bd-3ia"/>
                         <segue destination="791-hb-dWm" kind="relationship" relationship="viewControllers" id="mXV-74-BFe"/>
                     </connections>
                 </tabBarController>
@@ -217,6 +216,51 @@
             </objects>
             <point key="canvasLocation" x="2356" y="1665"/>
         </scene>
+        <!--User Manual View Controller-->
+        <scene sceneID="pQ7-CA-VSm">
+            <objects>
+                <viewController storyboardIdentifier="UserManualViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fLy-T2-bWd" customClass="UserManualViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gLG-5e-Ngu"/>
+                        <viewControllerLayoutGuide type="bottom" id="cbX-Va-bad"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="k0n-yH-jiC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kEW-pf-Ocl">
+                                <rect key="frame" x="0.0" y="97" width="375" height="398"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">User Manual:
+
+1. Press "+" button on top right in Event tab to add new event.
+
+2. If your event is added successfully you can see them in Upcoming Events list.
+
+3. You can edit and delete an existing event.
+
+4. If your event title contains "Sms" or "Email" you can send sms or mail by pressing info button beside the event name in event list. These are special words.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="kEW-pf-Ocl" secondAttribute="trailing" id="443-8C-StE"/>
+                            <constraint firstItem="kEW-pf-Ocl" firstAttribute="bottom" secondItem="cbX-Va-bad" secondAttribute="top" constant="-172" id="CAp-1J-4R2"/>
+                            <constraint firstItem="kEW-pf-Ocl" firstAttribute="top" secondItem="gLG-5e-Ngu" secondAttribute="bottom" constant="33" id="TDc-FR-5ev"/>
+                            <constraint firstItem="kEW-pf-Ocl" firstAttribute="leading" secondItem="k0n-yH-jiC" secondAttribute="leading" id="Z6p-He-1gN"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="4H4-kK-ndc"/>
+                    <connections>
+                        <outlet property="txtViewManual" destination="kEW-pf-Ocl" id="g13-6B-kxI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bpE-Hy-EFY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3872.8000000000002" y="2227.736131934033"/>
+        </scene>
         <!--Inbox Table View Controller-->
         <scene sceneID="2di-ki-rCh">
             <objects>
@@ -226,7 +270,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="BHp-Oy-9k9">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellInbox" id="BHp-Oy-9k9">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BHp-Oy-9k9" id="rwV-Fu-BSf">
@@ -282,6 +326,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A1f-b6-IQT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1609" y="1665"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qhp-7B-Qot">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dnV-Tb-qvh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uSB-Dj-SRV">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fLy-T2-bWd" kind="relationship" relationship="rootViewController" id="oUB-7y-UNs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gvb-rQ-5i9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3135" y="2228"/>
         </scene>
     </scenes>
     <resources>

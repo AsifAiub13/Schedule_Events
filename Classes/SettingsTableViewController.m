@@ -15,12 +15,7 @@
 @synthesize settingsElementsArray;
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.settingsElementsArray = @[@"About",@"Privacy & Policy",@"Contact"];
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.settingsElementsArray = @[@"About",@"How to use"];
     self.title = @"Settings";
 }
 
@@ -47,10 +42,24 @@
     if (indexPath.row == 0) {
         AboutTableViewController *aboutView = [[AboutTableViewController alloc] init];
         [self.navigationController pushViewController:aboutView animated:true];
+    }else if (indexPath.row == 1){
+//        UserManualViewController *manualView = [[UserManualViewController alloc] init];
+//        [self.navigationController pushViewController:manualView animated:true];
+        [self showManualAlert];
     }
     [self.tableView deselectRowAtIndexPath:indexPath animated:true];
 }
 
+-(void) showManualAlert{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"User Manual" message:@"1. Press + button on top right in Event tab to add new event. 2. If your event is added successfully you can see them in Upcoming Events list. 3. You can edit and delete an existing event. 4. If your event title contains Sms or Email you can send sms or mail by pressing info button beside the event name in event list. These are special words."
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK"
+                                                            style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {}];
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

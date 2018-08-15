@@ -6,6 +6,7 @@
 //
 
 #import "RootViewController.h"
+#import "InboxTableViewController.h"
 #import <MessageUI/MessageUI.h>
 @interface RootViewController () <EKEventEditViewDelegate,MFMessageComposeViewControllerDelegate,MFMailComposeViewControllerDelegate>
 // EKEventStore instance associated with the current Calendar application
@@ -19,6 +20,7 @@
 
 // Used to add events to Calendar
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *addButton;
+@property NSArray *temp;
 @property UIColor *themeColor;
 @property NSString *eventTitleLabelText;
 @property bool isSmsEvent;
@@ -64,7 +66,6 @@
         NSIndexPath *indexPath = (self.tableView).indexPathForSelectedRow;
         // Set the view controller to display the selected event
         eventViewController.event = (self.eventsList)[indexPath.row];
-        
         // Allow event editing
         eventViewController.allowsEditing = YES;
     }
@@ -96,7 +97,7 @@
     cell.textLabel.font = [UIFont fontWithDescriptor:[cell.textLabel.font.fontDescriptor fontDescriptorWithSymbolicTraits:UIFontDescriptorTraitBold] size:cell.textLabel.font.pointSize];
     cell.textLabel.text = [(self.eventsList)[indexPath.row] title];
     if ([[(self.eventsList)[indexPath.row] title] containsString:@"SMS"] || [[(self.eventsList)[indexPath.row] title] containsString:@"Sms"] || [[(self.eventsList)[indexPath.row] title] containsString:@"Mail"] || [[(self.eventsList)[indexPath.row] title] containsString:@"Email"] || [[(self.eventsList)[indexPath.row] title] containsString:@"mail"] || [[(self.eventsList)[indexPath.row] title] containsString:@"email"]) {
-        cell.detailTextLabel.text = [NSString stringWithFormat: @"Last Modified: %@", [(self.eventsList)[indexPath.row] lastModifiedDate]];
+        cell.detailTextLabel.text = @"Press info button to send sms/mail now!";
         cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
     }else{
         cell.detailTextLabel.text = @"";
@@ -104,8 +105,14 @@
     }
     
     if ([[(self.eventsList)[indexPath.row] title] containsString:@"SMS"] || [[(self.eventsList)[indexPath.row] title] containsString:@"Sms"]){
+        _temp = self.eventsList[indexPath.row];
         _isSmsEvent = true;
         _isMailEvent = false;
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        //NSMutableArray *temp_arr = [(self.eventsList)[indexPath.row] copy];
+        [userDefaults setObject:[(self.eventsList)[indexPath.row] title] forKey:@"smsEventListTitle"];
+        //[userDefaults setObject:[(self.eventsList)[indexPath.row] title] forKey:@"smsEventListTitle"];
+        [userDefaults synchronize];
     }else if([[(self.eventsList)[indexPath.row] title] containsString:@"Email"] || [[(self.eventsList)[indexPath.row] title] containsString:@"email"] || [[(self.eventsList)[indexPath.row] title] containsString:@"mail"] || [[(self.eventsList)[indexPath.row] title] containsString:@"Mail"]) {
         _isSmsEvent = false;
         _isMailEvent = true;
@@ -288,7 +295,7 @@
     MFMessageComposeViewController *messageController = [[MFMessageComposeViewController alloc] init];
     messageController.messageComposeDelegate = self;
     //[messageController setRecipients:recipents];
-    [messageController setBody:message];
+    //[messageController setBody:message];
     
     // Present message view controller on screen
     [self presentViewController:messageController animated:YES completion:nil];
@@ -336,9 +343,9 @@
         MFMailComposeViewController *mail =
         [[MFMailComposeViewController alloc] init];
         mail.mailComposeDelegate = self;
-        [mail setSubject:@"Sample Subject"];
+        //[mail setSubject:@"Sample Subject"];
         //[mail setMessageBody:@"Sample body message"];
-        [mail setToRecipients:@[@"testingEmail@example.com"]];
+        //[mail setToRecipients:@[@"testingEmail@example.com"]];
         //[mailVC  addAttachmentData: dataForImage mimeType: @”image/jpeg”; fileName: @”My image”];
         [self presentViewController:mail animated:YES completion:NULL];
     } else {
