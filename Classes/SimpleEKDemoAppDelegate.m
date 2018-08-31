@@ -21,7 +21,6 @@
     //[[UITabBar appearance] setUnselectedItemTintColor:[UIColor whiteColor]];
     // Override point for customization after application launch.
     [FIRApp configure];
-    [GADMobileAds configureWithApplicationID:@"ca-app-pub-3216532145539358~3760236444"];
     return YES;
 }
 
