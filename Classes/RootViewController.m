@@ -48,7 +48,6 @@
     //self.tableView.backgroundColor = _themeColor;
     GADRequest *adReq = [[GADRequest alloc]init];
     adReq.testDevices = @[kGADSimulatorID];
-    _bannerView.adUnitID = @"ca-app-pub-3216532145539358/3776548311";
     _bannerView.rootViewController = self;
     _bannerView.delegate = self;
     [self.view addSubview:_bannerView];
