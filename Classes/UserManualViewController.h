@@ -1,6 +1,6 @@
 //
 //  UserManualViewController.h
-//  Schedule_Events
+//  Organise iT
 //
 //  Created by Asif Seraje on 8/15/18.
 //

@@ -7,7 +7,7 @@
 
 
 #import "SimpleEKDemoAppDelegate.h"
-
+@import Firebase;
 @implementation SimpleEKDemoAppDelegate
 
 #pragma mark -
@@ -20,6 +20,8 @@
     [[UITabBar appearance] setBackgroundColor:[UIColor colorWithRed:35 green:113 blue:186 alpha:1]];
     //[[UITabBar appearance] setUnselectedItemTintColor:[UIColor whiteColor]];
     // Override point for customization after application launch.
+    [FIRApp configure];
+    [GADMobileAds configureWithApplicationID:@"ca-app-pub-3216532145539358~3760236444"];
     return YES;
 }
 

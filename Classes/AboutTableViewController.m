@@ -1,6 +1,6 @@
 //
 //  AboutTableViewController.m
-//  Schedule_Events
+//  Organise iT
 //
 //  Created by Asif Seraje on 8/4/18.
 //
@@ -15,7 +15,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     aboutElementsArray = @[@"App Name:",@"Version:",@"Build Number:",@"In app purchase"];
-    aboutRightElementsArray = @[@"Schedule iT",@"1.1.0",@"20180804",@""];
+    aboutRightElementsArray = @[@"Organise iT",@"1.0",@"2",@""];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.title = @"About Us";

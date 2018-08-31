@@ -17,9 +17,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="9Jn-vZ-E5J" customClass="GADBannerView">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="eventCell" textLabel="Ety-tf-dzB" detailTextLabel="jJG-HF-SIL" style="IBUITableViewCellStyleSubtitle" id="Qmf-gL-eML">
-                                <rect key="frame" x="0.0" y="22" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="66" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qmf-gL-eML" id="Pic-o9-NDP">
                                     <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
@@ -60,6 +65,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addButton" destination="ILv-nC-0Hv" id="JNV-Vx-5ld"/>
+                        <outlet property="bannerView" destination="9Jn-vZ-E5J" id="0uE-dT-Lkz"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cyL-2e-sE9" userLabel="First Responder" sceneMemberID="firstResponder"/>

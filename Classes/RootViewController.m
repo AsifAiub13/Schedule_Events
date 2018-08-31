@@ -8,8 +8,11 @@
 #import "RootViewController.h"
 #import "InboxTableViewController.h"
 #import <MessageUI/MessageUI.h>
-@interface RootViewController () <EKEventEditViewDelegate,MFMessageComposeViewControllerDelegate,MFMailComposeViewControllerDelegate>
+#import <GoogleMobileAds/GoogleMobileAds.h>
+@import GoogleMobileAds;
+@interface RootViewController () <EKEventEditViewDelegate,MFMessageComposeViewControllerDelegate,MFMailComposeViewControllerDelegate,GADBannerViewDelegate>
 // EKEventStore instance associated with the current Calendar application
+@property (weak, nonatomic) IBOutlet GADBannerView *bannerView;
 @property (nonatomic, strong) EKEventStore *eventStore;
 
 // Default calendar associated with the above event store
@@ -43,6 +46,13 @@
     self.addButton.enabled = NO;
     //_themeColor = [UIColor colorWithRed:35/255.0 green:113/255.0 blue:186/255.0 alpha:1];
     //self.tableView.backgroundColor = _themeColor;
+    GADRequest *adReq = [[GADRequest alloc]init];
+    adReq.testDevices = @[kGADSimulatorID];
+    _bannerView.adUnitID = @"ca-app-pub-3216532145539358/3776548311";
+    _bannerView.rootViewController = self;
+    _bannerView.delegate = self;
+    [self.view addSubview:_bannerView];
+    [_bannerView loadRequest:adReq];
 }
 
 
@@ -373,5 +383,39 @@
     }
     [self dismissViewControllerAnimated:YES completion:NULL];
     _isMailEvent = false;
+}
+
+//GAD DELEGATES
+/// Tells the delegate an ad request loaded an ad.
+- (void)adViewDidReceiveAd:(GADBannerView *)adView {
+    NSLog(@"adViewDidReceiveAd");
+}
+
+/// Tells the delegate an ad request failed.
+- (void)adView:(GADBannerView *)adView
+didFailToReceiveAdWithError:(GADRequestError *)error {
+    NSLog(@"adView:didFailToReceiveAdWithError: %@", [error localizedDescription]);
+}
+
+/// Tells the delegate that a full-screen view will be presented in response
+/// to the user clicking on an ad.
+- (void)adViewWillPresentScreen:(GADBannerView *)adView {
+    NSLog(@"adViewWillPresentScreen");
+}
+
+/// Tells the delegate that the full-screen view will be dismissed.
+- (void)adViewWillDismissScreen:(GADBannerView *)adView {
+    NSLog(@"adViewWillDismissScreen");
+}
+
+/// Tells the delegate that the full-screen view has been dismissed.
+- (void)adViewDidDismissScreen:(GADBannerView *)adView {
+    NSLog(@"adViewDidDismissScreen");
+}
+
+/// Tells the delegate that a user click will open another app (such as
+/// the App Store), backgrounding the current app.
+- (void)adViewWillLeaveApplication:(GADBannerView *)adView {
+    NSLog(@"adViewWillLeaveApplication");
 }
 @end

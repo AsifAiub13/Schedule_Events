@@ -1,6 +1,6 @@
 //
 //  AboutTableViewController.h
-//  Schedule_Events
+//  Organise iT
 //
 //  Created by Asif Seraje on 8/4/18.
 //

@@ -9,10 +9,12 @@
 /* Begin PBXBuildFile section */
 		0414D2CF1B74317E00291BC5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0414D2CE1B74317E00291BC5 /* Images.xcassets */; };
 		049024B91B7436890004D3C3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049024B71B7436890004D3C3 /* LaunchScreen.xib */; };
+		176EE85D6EDFCA805C47F7A9 /* libPods-Schedule_Events.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 94FBFE95AF49E5E51726E35D /* libPods-Schedule_Events.a */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */; };
 		7E8EE7E41194B0D70073914C /* SimpleEKDemoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8EE7E21194B0D70073914C /* SimpleEKDemoAppDelegate.m */; };
 		8D026E0A2123F17A0067AE54 /* UserManualViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D026E092123F17A0067AE54 /* UserManualViewController.m */; };
+		8D191AF821394EDE00DC594A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D191AF721394EDE00DC594A /* GoogleService-Info.plist */; };
 		8D1A8526211618F4002230AD /* AboutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D1A8525211618F4002230AD /* AboutTableViewController.m */; };
 		8DE3FBF12110D35400D72D11 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE3FBF02110D35400D72D11 /* SettingsTableViewController.m */; };
 		8DE3FBF42110D55400D72D11 /* InboxTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE3FBF32110D55400D72D11 /* InboxTableViewController.m */; };
@@ -24,7 +26,7 @@
 		0414D2D11B74334600291BC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Storyboard.storyboard; sourceTree = "<group>"; };
 		049024B81B7436890004D3C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		04B095C61B83D2E40089F6BD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Storyboard.strings; sourceTree = "<group>"; };
-		1D6058910D05DD3D006BFB54 /* Schedule_Events.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Schedule_Events.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6058910D05DD3D006BFB54 /* Organise iT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Organise iT.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		28A0AAE50D9B0CCF005BE974 /* Schedule_Events_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Schedule_Events_Prefix.pch; sourceTree = "<group>"; };
 		28C286DF0D94DF7D0034E888 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		28C286E00D94DF7D0034E888 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
@@ -34,12 +36,16 @@
 		8D026E082123F17A0067AE54 /* UserManualViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserManualViewController.h; sourceTree = "<group>"; };
 		8D026E092123F17A0067AE54 /* UserManualViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserManualViewController.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Schedule_Events-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Schedule_Events-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		8D191AF721394EDE00DC594A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8D1A8524211618F4002230AD /* AboutTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AboutTableViewController.h; sourceTree = "<group>"; };
 		8D1A8525211618F4002230AD /* AboutTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AboutTableViewController.m; sourceTree = "<group>"; };
 		8DE3FBEF2110D35400D72D11 /* SettingsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
 		8DE3FBF02110D35400D72D11 /* SettingsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
 		8DE3FBF22110D55400D72D11 /* InboxTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InboxTableViewController.h; sourceTree = "<group>"; };
 		8DE3FBF32110D55400D72D11 /* InboxTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InboxTableViewController.m; sourceTree = "<group>"; };
+		94FBFE95AF49E5E51726E35D /* libPods-Schedule_Events.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Schedule_Events.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A027F821DB34DB90E3588D61 /* Pods-Schedule_Events.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Schedule_Events.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Schedule_Events/Pods-Schedule_Events.debug.xcconfig"; sourceTree = "<group>"; };
+		DF0BC4C4AD8BDF032B250D56 /* Pods-Schedule_Events.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Schedule_Events.release.xcconfig"; path = "Pods/Target Support Files/Pods-Schedule_Events/Pods-Schedule_Events.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				176EE85D6EDFCA805C47F7A9 /* libPods-Schedule_Events.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,18 +82,21 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* Schedule_Events.app */,
+				1D6058910D05DD3D006BFB54 /* Organise iT.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+		29B97314FDCFA39411CA2CEA = {
 			isa = PBXGroup;
 			children = (
+				8D191AF721394EDE00DC594A /* GoogleService-Info.plist */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				C842EAB6D376F1DE6DACE637 /* Pods */,
+				CB24306C88C13D46D4AE6A21 /* Frameworks */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -111,6 +121,23 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		C842EAB6D376F1DE6DACE637 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A027F821DB34DB90E3588D61 /* Pods-Schedule_Events.debug.xcconfig */,
+				DF0BC4C4AD8BDF032B250D56 /* Pods-Schedule_Events.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CB24306C88C13D46D4AE6A21 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				94FBFE95AF49E5E51726E35D /* libPods-Schedule_Events.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -118,9 +145,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Schedule_Events" */;
 			buildPhases = (
+				FF857BB672E8F99A1997AC45 /* [CP] Check Pods Manifest.lock */,
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+				E5D4DDF03F3B19F2AB818675 /* [CP] Embed Pods Frameworks */,
+				EFB55159678E11546A2F8025 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -128,7 +158,7 @@
 			);
 			name = Schedule_Events;
 			productName = SimpleEKDemo;
-			productReference = 1D6058910D05DD3D006BFB54 /* Schedule_Events.app */;
+			productReference = 1D6058910D05DD3D006BFB54 /* Organise iT.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -140,18 +170,20 @@
 				LastUpgradeCheck = 0700;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
-						DevelopmentTeam = D2V899229R;
+						DevelopmentTeam = 8QHBGUK356;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Schedule_Events" */;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Organise iT" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			mainGroup = 29B97314FDCFA39411CA2CEA;
+			productRefGroup = 19C28FACFE9D520D11CA2CBB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -167,11 +199,63 @@
 			files = (
 				049024B91B7436890004D3C3 /* LaunchScreen.xib in Resources */,
 				0414D2CF1B74317E00291BC5 /* Images.xcassets in Resources */,
+				8D191AF821394EDE00DC594A /* GoogleService-Info.plist in Resources */,
 				EBC74CAD17822B1F001CA859 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E5D4DDF03F3B19F2AB818675 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Schedule_Events/Pods-Schedule_Events-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EFB55159678E11546A2F8025 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Schedule_Events/Pods-Schedule_Events-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF857BB672E8F99A1997AC45 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Schedule_Events-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1D60588E0D05DD3D006BFB54 /* Sources */ = {
@@ -213,15 +297,17 @@
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A027F821DB34DB90E3588D61 /* Pods-Schedule_Events.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = D2V899229R;
+				DEVELOPMENT_TEAM = 8QHBGUK356;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
@@ -236,9 +322,10 @@
 				GCC_WARN_UNUSED_LABEL = YES;
 				INFOPLIST_FILE = "Schedule_Events-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.serajeapp.scheduleit;
-				PRODUCT_NAME = Schedule_Events;
+				PRODUCT_BUNDLE_IDENTIFIER = net.scheduleit.ios26;
+				PRODUCT_NAME = "Organise iT";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
 			};
@@ -246,15 +333,17 @@
 		};
 		1D6058950D05DD3E006BFB54 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF0BC4C4AD8BDF032B250D56 /* Pods-Schedule_Events.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = YES;
-				DEVELOPMENT_TEAM = D2V899229R;
+				DEVELOPMENT_TEAM = 8QHBGUK356;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = Schedule_Events_Prefix.pch;
 				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES;
@@ -267,9 +356,10 @@
 				GCC_WARN_UNUSED_LABEL = YES;
 				INFOPLIST_FILE = "Schedule_Events-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.serajeapp.scheduleit;
-				PRODUCT_NAME = Schedule_Events;
+				PRODUCT_BUNDLE_IDENTIFIER = net.scheduleit.ios26;
+				PRODUCT_NAME = "Organise iT";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -322,7 +412,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Schedule_Events" */ = {
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Organise iT" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
